@@ -1,6 +1,32 @@
 [
   {
     "ContainingType": "DemoProject.Controllers.AdminController",
+    "Method": "NotifySession",
+    "RelativePath": "api/Admin/NotifySession",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notifySessionDto",
+        "Type": "DemoProject.DTOs.TerminateSessionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoProject.Controllers.AdminController",
+    "Method": "GetOnlineUsers",
+    "RelativePath": "api/Admin/OnlineUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoProject.Controllers.AdminController",
     "Method": "GetAllUsers",
     "RelativePath": "api/Admin/users",
     "HttpMethod": "GET",
@@ -20,6 +46,22 @@
       {
         "Name": "loginDto",
         "Type": "DemoProject.DTOs.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DemoProject.Controllers.AuthController",
+    "Method": "Logout",
+    "RelativePath": "api/Auth/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "logoutDto",
+        "Type": "DemoProject.DTOs.LogoutDto",
         "IsRequired": true
       }
     ],

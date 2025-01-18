@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using DemoProject.Contexts;
 using DemoProject.Hubs;
 using Microsoft.AspNetCore.SignalR;
@@ -16,7 +17,11 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(opt =>
+{
+    opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+    opt.JsonSerializerOptions.WriteIndented = true;
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -41,6 +46,7 @@ app.UseCors();     // Enable CORS middleware
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapHub<NotificationHub>("/notify");  // Map SignalR hub to "/notificationHub"
+app.MapHub<NotificationHub>("/notify");  
+app.MapHub<TerminationNotificationHub>("/notificationHub");
 
 app.Run();
